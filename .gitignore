@@ -1,0 +1,7 @@
+# Ignora la carpeta data
+data
+
+# Ignora las constantes
+environments.js
+
+
