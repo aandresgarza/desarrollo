@@ -21,11 +21,11 @@ class article extends HTMLElement {
       var count=1;
       res.forEach(element => {
         if ( count ===1 || ( count % 8 ) == 0  ) {
-           this.innerHTML += `<article style='background-image:url("${element.url}")' class="item big-item" alt="IMG" id="${count}" ></article>`;
+           this.innerHTML += `<article style='background-image:url("${element.url}")' class="item big-item" alt="IMG" id="${count}" ><div class=" d-flex w-100 justify-content-between align-items-end pb-3"><div class="d-block ms-3"><h6 class="p-3">27€</h6></div></div>`;
            
            count++
          } else {
-           this.innerHTML += `<article style='background-image:url("${element.url}")' class="item" alt="IMG" class="regular-item" id="${count}"></article>`;
+           this.innerHTML += `<article style='background-image:url("${element.url}")' class="item" alt="IMG" class="regular-item" id="${count}"><div class="d-flex w-100 justify-content-between align-items-end pb-3"><div class="d-block ms-3"><h6 class="p-3">29€</h6></div></div></article>`;
            count++
          }
         });
