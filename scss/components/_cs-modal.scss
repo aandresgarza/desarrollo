@@ -1,0 +1,8 @@
+.carousel-indicators [data-bs-target] {
+    width: 80px;
+    height: 80px;
+    > button{
+        width: 80px;
+        height: 80px;
+    }
+}
