@@ -1,6 +1,6 @@
 
 //let resData = await fetch('/./data/photo.json')
-import { VAR_DATA } from "../environments.js";
+import { VAR_DATA } from "https://aandresgarza.github.io/desarrollo/environments.js";
 
 //GET All data
 export async function getRequestData()  {
