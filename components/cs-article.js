@@ -1,5 +1,5 @@
 
-import {getRequestData} from '../services/data.service.js';
+import {getRequestData} from 'https://aandresgarza.github.io/desarrollo/services/data.service.js';
 
 class article extends HTMLElement {
   constructor() {
