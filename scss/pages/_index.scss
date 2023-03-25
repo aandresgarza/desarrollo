@@ -3,4 +3,7 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: 30vh;
     gap: 5px 5px; 
+    @media screen and (max-width: $sm) {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));  
+    }
 }

@@ -8,6 +8,11 @@ body {
   grid-auto-rows: 30vh;
   gap: 5px 5px;
 }
+@media screen and (max-width: 576px) {
+  .container-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
 
 .item {
   cursor: pointer;
