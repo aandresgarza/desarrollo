@@ -34,20 +34,34 @@ class Modal extends HTMLElement {
         modals.innerHTML = `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-fullscreen">
                             <div class="modal-content ">
-                              <div class="modal-header container">
-                                <h5 class="modal-title" id="exampleModalLabel">${selected[0].title}</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              <div class="modal-header pb-0 border-0  container-sm" >
+                              <a  href="#" class="d-flex align-items-center text-decoration-none text-dark gap-1" data-bs-dismiss="modal" aria-label="Close">
+                                <span class="text-primary-app">&larr;</span> Ver artículos
+                              </a>
+                                <img src="https://aandresgarza.github.io/gattue/img/cats-head.svg">
+                                <span class="invisible">  Ver artículos</span>
                               </div>
-                              <div class="modal-body container">
-                                <section class="container w-50">
+                              <div class="modal-body container-sm">
+                                <section>
                                   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                   <div class="carousel-inner" id="mod-content"> </div>
                                 </section>
-                                <div class="carousel-indicators" id="indicators"></div>
+                                <div id="indicators"></div>
                               </div>
-                              <div class="modal-footer container">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                              <div class="container-sm">
+                                <h5 class="modal-title" id="exampleModalLabel">${selected[0].title}</h5>
+                                <p>tellus ac scelerisque placerat, lorem mi consequat massa, a fermentum diam turpis a lectus. Quisque molestie sed tortor aliquam mollis. Fusce imperdiet vehicula faucibus. Sed id mauris justo.</p>
+                              </div>
+                              <div class="modal-footer position-fixed w-100 bg-white ">
+                              <div class="d-flex justify-content-between w-100">
+                                  <a  href="#" class="d-flex align-items-center text-decoration-none text-dark gap-1" data-bs-dismiss="modal" aria-label="Close">
+                                    <span class="text-primary-app">&larr;</span> Ver artículos
+                                  </a>
+                                  <div class="">
+                                    <button type="button" class="btn btn-secondary border-0" data-bs-dismiss="modal">Comprar en Vinted</button>
+                                    <button type="button" class="btn bg-primary-app text-white border-0">Comprar en Wallapop</button>
+                                  </div>
+                                  </div>
                               </div>
                             </div>
                           </div>
@@ -57,11 +71,11 @@ class Modal extends HTMLElement {
         for (var key in selected[0].images) {
           key = parseInt(key)
           if (key === 0) {
-            demob.innerHTML += `<button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='${key - 1}' class='item active' style='background-image:url("${selected[0].images[key] }")'  aria-current='true' aria-label='Slide ${key}'></button>`;
-            demop.innerHTML += `<div class='carousel-item active'><img class='w-100 d-block' src=' ${selected[0].images[key] }' alt='img'></div>`;
+            demob.innerHTML += `<a type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='${key}' class='item active' style='background-image:url("${selected[0].images[key] }")'  aria-current='true' aria-label='Slide ${key}'></a>`;
+            demop.innerHTML += `<div class='carousel-item active' style='background-image:url("${selected[0].images[key] }")'></div>`;
           } else {
-            demob.innerHTML += `<button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='${key - 1}' class='item' style='background-image:url("${selected[0].images[key] }")' aria-current='true' aria-label='Slide ${key}'></button>`;
-            demop.innerHTML += `<div class='carousel-item'><img class='w-100 d-block' src=' ${selected[0].images[key] }' alt='img'></div>`;
+            demob.innerHTML += `<a type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='${key}' class='item' style='background-image:url("${selected[0].images[key] }")' aria-current='true' aria-label='Slide ${key}'></a>`;
+            demop.innerHTML += `<div class='carousel-item' style='background-image:url("${selected[0].images[key] }")'></div>`;
           }
         }
         var exampleModal = document.getElementById('exampleModal');

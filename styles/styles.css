@@ -1,5 +1,18 @@
+/* Colors */
+.text-primary-app {
+  color: #20c997;
+}
+
+.bg-primary-app {
+  background-color: #20c997;
+}
+
 body {
   font-family: "Varela Round", sans-serif;
+}
+
+.container-sm {
+  max-width: 796px;
 }
 
 .container-grid {
@@ -47,6 +60,35 @@ body {
 .carousel-indicators [data-bs-target] > button {
   width: 80px;
   height: 80px;
+}
+
+.carousel-item {
+  height: 640px;
+  background-position: center center;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 180px;
+  max-width: 796px;
+  gap: 5px;
+  max-height: 656px;
+  overflow-y: hidden !important;
+}
+.modal-body > section {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.modal-footer {
+  bottom: 0px;
+}
+
+#indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(139px, 1fr));
+  grid-auto-rows: 210px;
+  gap: 5px 5px;
 }
 
 /*# sourceMappingURL=styles.css.map */
