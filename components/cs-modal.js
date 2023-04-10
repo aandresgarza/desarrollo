@@ -2,7 +2,10 @@ import { getRequestData } from '../services/data.service.js';
 
 class Modal extends HTMLElement {
   constructor() {
-
+    const urlParams = new URLSearchParams(window.location.search);
+    const modalParams = parseInt(urlParams.get('product'))
+    alert(modalParams)
+    
     super();
   }
 
@@ -14,7 +17,7 @@ class Modal extends HTMLElement {
   static get observedAttributes() {
     return ["filter"];
   }
-
+ 
   attributeChangedCallback(name, oldValue, newValue) {
 
     if (oldValue === null) {
@@ -35,7 +38,7 @@ class Modal extends HTMLElement {
                           <div class="modal-dialog modal-fullscreen">
                             <div class="modal-content ">
                               <div class="modal-header pb-0 border-0  container-sm" >
-                              <a  href="#" class="d-flex align-items-center text-decoration-none text-dark gap-1" data-bs-dismiss="modal" aria-label="Close">
+                              <a class="d-flex align-items-center text-decoration-none text-dark gap-1 closerp">
                                 <span class="text-primary-app">&larr;</span> Ver artículos
                               </a>
                                 <img src="https://aandresgarza.github.io/gattue/img/cats-head.svg" width="65">
@@ -54,7 +57,7 @@ class Modal extends HTMLElement {
                               </div>
                               <div class="modal-footer position-fixed w-100 bg-light border-0">
                               <div class="d-flex justify-content-between w-100 flex-wrap align-items-center gap-3">
-                                  <a  href="#" class="d-flex align-items-center text-decoration-none text-dark gap-1 w-down" data-bs-dismiss="modal" aria-label="Close">
+                                  <a class="d-flex align-items-center text-decoration-none text-dark gap-1 w-down closerp" >
                                     <span class="text-primary-app">&larr;</span> Ver artículos
                                   </a>
                                   <strong>${selected[0].title}</strong>
@@ -82,8 +85,18 @@ class Modal extends HTMLElement {
         }
         var exampleModal = document.getElementById('exampleModal');
         let myModal = bootstrap.Modal.getOrCreateInstance(exampleModal) // Returns a Bootstrap modal instance
+        const nuevaUrl = window.location.href + `?product=${selected[0].id}`;
+        history.pushState(null, '', nuevaUrl);
         myModal.show();
-
+        var closer = document.querySelectorAll(".closerp");
+          for (var i = 0; i < closer.length; i++) {
+              var closer = closer[i];
+              closer.onclick = function () {
+                const nuevaUrl = window.location.href.split('?')[0];
+                history.pushState(null, '', nuevaUrl);
+                myModal.hide();
+              };
+          }
 
         var myCarousel = document.querySelector('#carouselExampleIndicators')
         var carousel = new bootstrap.Carousel(myCarousel, { interval: 100, pause: true, nextWhenVisible: true })
