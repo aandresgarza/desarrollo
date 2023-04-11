@@ -24,6 +24,10 @@
 .carousel-item {
     height: 640px;
     background-position: center center;
+    @media (max-width: 576px) {
+        height: 360px;
+        background-size: contain;
+    }
 }
 
 .modal-body {
@@ -33,6 +37,11 @@
     gap: 5px;
     max-height: 656px;
     overflow-y: hidden !important;
+    @media (max-width: 576px) {
+       padding: 0;
+       display: block;
+       flex: inherit;
+    }
 
     >section {
         grid-column-start: 1;
@@ -42,6 +51,23 @@
             grid-column-end: 4;
         }
     }
+}
+@media (max-width: 576px) {
+.modal-header {
+        position: fixed;
+        z-index: 2;
+        
+        >.text-primary-app, a{
+            color:#fff!important;
+        }
+        >span{
+            display: none;
+        }
+        >img{
+            max-width: 45px;
+        }
+    }
+
 }
 
 .modal-footer {
@@ -54,6 +80,20 @@
     grid-template-columns: repeat(auto-fill, minmax(139px, 1fr));
     grid-auto-rows: 210px;
     gap: 5px 5px;
+    @media (max-width: 576px) {
+        display: flex;
+        
+        >a{
+            background-image: none!important;
+            width: 5px;
+            height: 5px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 200px;
+            margin-top: -26px;
+            z-index: 2;
+            margin-left: 20px;
+        }
+    }
 }
 
 .w-down {
