@@ -5,6 +5,24 @@ $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
 
-body{
+/* Colors */
+$primary-app: #20c997;
+
+
+.text-primary-app {
+    color: $primary-app;
+}
+
+.bg-primary-app {
+    background-color: $primary-app;
+}
+
+
+
+body {
     font-family: 'Varela Round', sans-serif;
+}
+
+.container-sm {
+    max-width: 796px;
 }
