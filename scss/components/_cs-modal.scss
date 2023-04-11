@@ -54,13 +54,17 @@
 }
 @media (max-width: 576px) {
 .modal-header {
-        position: absolute;
+        position: fixed;
         z-index: 2;
+        
+        >.text-primary-app, a{
+            color:#fff!important;
+        }
         >span{
             display: none;
         }
         >img{
-            max-width: 30px;
+            max-width: 45px;
         }
     }
 

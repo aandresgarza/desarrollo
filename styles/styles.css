@@ -114,14 +114,17 @@ body {
 
 @media (max-width: 576px) {
   .modal-header {
-    position: absolute;
+    position: fixed;
     z-index: 2;
+  }
+  .modal-header > .text-primary-app, .modal-header a {
+    color: #fff !important;
   }
   .modal-header > span {
     display: none;
   }
   .modal-header > img {
-    max-width: 30px;
+    max-width: 45px;
   }
 }
 .modal-footer {
